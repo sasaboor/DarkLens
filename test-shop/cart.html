@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart | Demo Mart</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- DarkLens test shop. Ground truth: data-dp-label / data-dp-id. Detection code must never read data-dp-*. -->
+<div class="notif-bar" data-dp-label="nagging" data-dp-id="cart-nag-1" data-dp-desc="Sticky 'Allow notifications' banner that returns on every page load">
+  <span>&#128276; Get notified when items in your cart drop in price.</span>
+  <button class="btn btn-teal btn-sm" data-banner-hide>Allow notifications</button>
+  <a href="#" class="tiny-link" data-banner-hide data-dp-label="interface_interference" data-dp-id="cart-ii-1" data-dp-desc="Decline is a tiny faint link while Allow is a filled button">Not now</a>
+</div>
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo" href="index.html"><span class="logo-mark">D</span><span>Demo Mart<small>Explore more, pay less</small></span></a>
+    <div class="deliver">Deliver to<b>Pune 411001</b></div>
+    <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="header-links"><a href="#" class="hide-sm">Hello, Sign in</a><a href="#" class="hide-sm">Orders</a><a class="cart-link" href="cart.html">Cart<span class="cart-badge">2</span></a></nav>
+  </div>
+  <nav class="cat-nav"><ul><li><a href="index.html">Mobiles &amp; Audio</a></li><li><a href="index.html">Fashion</a></li><li><a href="index.html">Home &amp; Kitchen</a></li><li><a href="index.html">Grocery</a></li><li><a href="index.html">Beauty</a></li><li><a href="index.html">Diwali Store</a></li></ul></nav>
+</header>
+
+<main class="container">
+  <h1>Shopping cart</h1>
+  <p class="hot-note" data-dp-label="false_urgency" data-dp-id="cart-fu-1" data-dp-desc="Generic high-demand claim with no evidence">&#128293; Items in your cart are selling fast. Check out now before they sell out!</p>
+
+  <div class="two-col">
+    <section>
+      <div class="panel">
+        <article class="cart-item" data-line data-amount="1299">
+          <div class="thumb"><img src="img/earbuds.svg" alt=""></div>
+          <div>
+            <a class="title" href="product.html"><b>Aarav Wireless Earbuds Pro</b></a>
+            <div class="muted" style="font-size:12px">Colour: Midnight Black &middot; Sold by Aarav Audio</div>
+            <div class="in-stock" style="font-size:12px">In stock</div>
+            <div class="actions">
+              <label>Qty <select data-qty aria-label="Quantity" data-dp-label="benign" data-dp-id="cart-bn-1"><option>1</option><option>2</option><option>3</option></select></label>
+              <button class="link-btn" data-dp-label="benign" data-dp-id="cart-bn-2">Save for later</button>
+              <button class="link-btn" data-remove data-dp-label="benign" data-dp-id="cart-bn-3">Remove</button>
+            </div>
+          </div>
+          <div class="line-price" data-out="line">&#8377;1,299</div>
+        </article>
+
+        <article class="cart-item" data-line data-amount="349">
+          <div class="thumb"><img src="img/bottle.svg" alt=""></div>
+          <div>
+            <b>Kaveri Stainless Steel Water Bottle 1L</b>
+            <div class="muted" style="font-size:12px">Colour: Teal &middot; Sold by Kaveri Home</div>
+            <div class="actions">
+              <label>Qty <select data-qty aria-label="Quantity" data-dp-label="benign" data-dp-id="cart-bn-4"><option>1</option><option>2</option><option>3</option></select></label>
+              <button class="link-btn" data-remove data-dp-label="benign" data-dp-id="cart-bn-5">Remove</button>
+            </div>
+          </div>
+          <div data-dp-label="bait_and_switch" data-dp-id="cart-bas-1" data-dp-desc="Listing card showed Rs 199; cart charges Rs 349">
+            <div class="line-price" data-out="line">&#8377;349</div>
+            <div class="price-note">Deal price &#8377;199 no longer applies</div>
+          </div>
+        </article>
+
+        <!-- Basket sneaking: revealed ~1 s after load by dark.js, cart badge goes up with no click. -->
+        <article class="cart-item" data-line data-amount="0" data-auto-add hidden data-dp-label="basket_sneaking" data-dp-id="cart-bs-1" data-dp-desc="Free-trial membership added to the cart automatically on page load">
+          <div class="thumb" style="display:grid;place-items:center;font-weight:900;color:#0f5e5a;font-size:22px">Plus</div>
+          <div>
+            <b>Demo Mart Plus, 30-day free trial</b>
+            <div class="muted" style="font-size:12px">Added for you &middot; &#8377;0 today, then Rs 199/month</div>
+            <div class="actions"><button class="link-btn" data-remove>Remove</button></div>
+          </div>
+          <div class="line-price">&#8377;0</div>
+        </article>
+
+        <label class="addon">
+          <input type="checkbox" checked data-amount="499" data-dp-label="basket_sneaking" data-dp-id="cart-bs-2" data-dp-desc="Pre-ticked protection plan adds Rs 499">
+          <span><b>Add 1-year protection plan Rs 499</b><br><span class="muted" style="font-size:12px">Covers accidental damage and liquid spills for your earbuds.</span></span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" data-amount="30" data-dp-label="benign" data-dp-id="cart-bn-6">
+          <span><b>Gift wrap this order, Rs 30</b><br><span class="muted" style="font-size:12px">Optional. Includes a printed message card.</span></span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" data-dp-label="trick_wording" data-dp-id="cart-tw-1" data-dp-desc="Double negative makes the choice unclear">
+          <span style="font-size:13px">Tick here if you would not prefer not to skip SMS updates about your order and offers.</span>
+        </label>
+
+        <div class="coupon-box">
+          <span><b>SAVE10</b> gives you 10% off on this order.</span>
+          <button class="btn btn-teal btn-sm" data-dp-label="benign" data-dp-id="cart-bn-7">Apply coupon</button>
+          <button class="link-btn" data-dp-label="confirm_shaming" data-dp-id="cart-cs-1" data-dp-desc="Decline wording shames the user">I'll pay full price</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel summary">
+      <h2>Price details</h2>
+      <div class="row"><span>Subtotal</span><span data-out="subtotal">&#8377;2,147</span></div>
+      <div class="row"><span>Delivery</span><span class="save">FREE</span></div>
+      <div class="row total"><span>Total</span><span data-out="total">&#8377;2,147</span></div>
+      <p class="save">You save &#8377;850 on this order</p>
+      <a class="btn btn-buy btn-block" href="checkout.html" data-dp-label="benign" data-dp-id="cart-bn-8">Proceed to checkout</a>
+      <p class="muted" style="font-size:12px;margin-bottom:0">Safe and secure payments. Easy 7-day returns.</p>
+    </aside>
+  </div>
+</main>
+
+<!-- Nagging popup: same component as index.html, shares the per-session counter. -->
+<div id="newsletter" class="backdrop" role="dialog" aria-modal="true" aria-labelledby="nl-title" hidden data-dp-label="nagging" data-dp-id="cart-nag-2" data-dp-desc="Newsletter popup that reappears up to 3 times per session">
+  <div class="modal">
+    <button class="close-x" aria-label="Close" data-dismiss>&times;</button>
+    <div class="modal-hero">&#8377;100 OFF</div>
+    <h2 id="nl-title">on your first order!</h2>
+    <p class="muted">Join 2 lakh shoppers who get early access to Lightning Deals.</p>
+    <form>
+      <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+      <button class="btn btn-buy" type="submit">Subscribe and get &#8377;100 off</button>
+    </form>
+    <button class="decline-shame" data-dismiss data-dp-label="confirm_shaming" data-dp-id="cart-cs-2" data-dp-desc="Decline wording shames the user">No thanks, I don't like saving money</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <div><a href="#">About</a><a href="#">Help centre</a><a href="#">Returns</a><a href="#">Privacy</a></div>
+    <div>&copy; 2026 Demo Mart (fictional brand)</div>
+  </div>
+  <div class="demo-note">Demo store for testing DarkLens. Not a real shop.</div>
+</footer>
+<script src="assets/common.js"></script>
+<script src="assets/dark.js"></script>
+</body>
+</html>

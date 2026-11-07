@@ -10,16 +10,31 @@
     "zip": "wxt zip",
     "compile": "tsc --noEmit",
     "test": "vitest run",
-    "postinstall": "wxt prepare"
+    "build:extractor": "node tools/build-extractor.ts",
+    "debug:features": "node tools/debug-features.ts",
+    "e2e:debug": "node tools/e2e-extension.ts",
+    "shop": "node tools/serve-shop.ts",
+    "postinstall": "wxt prepare",
+    "ground-truth": "node tools/build-ground-truth.ts",
+    "walk": "node tools/walk-shop.ts",
+    "evaluate": "node tools/evaluate.ts",
+    "collect": "node tools/collect.ts",
+    "screenshots": "node tools/screenshots.ts",
+    "pixels:check": "node tools/pixel-check.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@wxt-dev/module-react": "^1.2.2",
+    "esbuild": "^0.28.2",
+    "happy-dom": "^21.0.4",
+    "linkedom": "^0.18.15",
+    "playwright": "^1.65.0",
     "typescript": "^7.0.2",
     "vitest": "^5.1.0",
     "wxt": "^0.21.5"

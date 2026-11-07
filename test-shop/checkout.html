@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Demo Mart</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- DarkLens test shop. Ground truth: data-dp-label / data-dp-id. Detection code must never read data-dp-*. -->
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo" href="index.html"><span class="logo-mark">D</span><span>Demo Mart<small>Explore more, pay less</small></span></a>
+    <div class="deliver">Deliver to<b>Pune 411001</b></div>
+    <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="header-links"><a href="#" class="hide-sm">Hello, Sign in</a><a href="#" class="hide-sm">Orders</a><a class="cart-link" href="cart.html">Cart<span class="cart-badge">2</span></a></nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Checkout</h1>
+  <div class="checkout-timer" data-dp-label="false_urgency" data-dp-id="chk-fu-1" data-dp-desc="Checkout countdown that restarts on every reload">&#9203; Complete your order in <b data-countdown="599">09:59</b> or the items in your cart will be released.</div>
+
+  <div class="two-col">
+    <section>
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">1</span><h2 style="margin:0">Delivery address</h2></div>
+        <div class="form-grid">
+          <div class="field"><label for="a-name">Full name</label><input id="a-name" autocomplete="name"></div>
+          <div class="field"><label for="a-phone">Mobile number</label><input id="a-phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="a-pin">Pincode</label><input id="a-pin" inputmode="numeric" autocomplete="postal-code"></div>
+          <div class="field"><label for="a-city">City</label><input id="a-city" autocomplete="address-level2"></div>
+        </div>
+        <div class="field"><label for="a-line">Flat, house no., building, area</label><input id="a-line" autocomplete="street-address"></div>
+        <div class="field"><label for="a-state">State</label>
+          <select id="a-state" aria-label="State" data-dp-label="benign" data-dp-id="chk-bn-1"><option>Maharashtra</option><option>Karnataka</option><option>Tamil Nadu</option><option>Delhi</option><option>West Bengal</option><option>Rajasthan</option></select>
+        </div>
+        <label style="font-size:13px"><input type="checkbox" data-dp-label="benign" data-dp-id="chk-bn-2"> Save this address for future orders</label>
+      </div>
+
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">2</span><h2 style="margin:0">Delivery options</h2></div>
+        <label class="radio-card"><input type="radio" name="speed" checked data-dp-label="benign" data-dp-id="chk-bn-3"> <span><b>Standard delivery</b>, FREE &middot; by Tue, 10 Nov</span></label>
+        <label class="radio-card"><input type="radio" name="speed" data-dp-label="benign" data-dp-id="chk-bn-4"> <span><b>Express delivery</b>, &#8377;99 &middot; tomorrow</span></label>
+        <div class="upsell">
+          <span><b>Get it tomorrow!</b> 8 out of 10 shoppers choose Express.</span>
+          <span style="display:flex;gap:14px;align-items:center">
+            <button class="plain-link" data-dp-label="interface_interference" data-dp-id="chk-ii-1" data-dp-desc="Decline styled as plain grey text next to a filled upgrade button">Continue with standard delivery</button>
+            <button class="btn btn-buy btn-sm" data-dp-label="benign" data-dp-id="chk-bn-5">Upgrade for &#8377;99</button>
+          </span>
+        </div>
+
+        <h3 style="margin-top:16px">Is this order a gift?</h3>
+        <div class="choice-row">
+          <label class="radio-card"><input type="radio" name="gift" data-dp-label="benign" data-dp-id="chk-bn-6"> Yes</label>
+          <label class="radio-card"><input type="radio" name="gift" data-dp-label="benign" data-dp-id="chk-bn-7"> No</label>
+        </div>
+
+        <label class="addon">
+          <input type="checkbox" checked data-amount="10" data-dp-label="basket_sneaking" data-dp-id="chk-bs-1" data-dp-desc="Pre-ticked donation adds Rs 10">
+          <span><b>Donate Rs 10</b> to the Demo Mart Foundation for children's education</span>
+        </label>
+        <label class="addon" style="border-color:#f1f1f1;background:#fff">
+          <input type="checkbox" checked data-amount="199" data-dp-label="subscription_trap" data-dp-id="chk-st-1" data-dp-desc="Pre-ticked auto-renewing membership in tiny grey text">
+          <span style="font-size:10px;color:#b5b5b5">Join Demo Mart Plus Rs 199/month, renews automatically. Cancel anytime from the app under Account &gt; Memberships &gt; Manage.</span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" checked data-dp-label="trick_wording" data-dp-id="chk-tw-1" data-dp-desc="Pre-ticked double-negative opt-out for offers">
+          <span style="font-size:13px">Uncheck this box if you don't want to not receive offers</span>
+        </label>
+      </div>
+
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">3</span><h2 style="margin:0">Payment</h2></div>
+        <label class="radio-card"><input type="radio" name="pay" checked data-dp-label="benign" data-dp-id="chk-bn-8"> UPI (any UPI app)</label>
+        <label class="radio-card"><input type="radio" name="pay" data-dp-label="benign" data-dp-id="chk-bn-9"> Credit or debit card</label>
+        <label class="radio-card"><input type="radio" name="pay" data-dp-label="benign" data-dp-id="chk-bn-10"> Cash on delivery</label>
+      </div>
+    </section>
+
+    <aside class="panel summary">
+      <h2>Order summary</h2>
+      <div class="row" data-line data-amount="1299"><span>Aarav Wireless Earbuds Pro &times; 1</span><span>&#8377;1,299</span></div>
+      <div class="row" data-line data-amount="349"><span>Kaveri Steel Water Bottle 1L &times; 1</span><span>&#8377;349</span></div>
+      <div class="row" data-line data-amount="499"><span>1-year protection plan</span><span>&#8377;499</span></div>
+      <div class="row" data-line data-amount="0"><span>Demo Mart Plus trial</span><span>&#8377;0</span></div>
+      <div class="row"><span>Subtotal (incl. add-ons)</span><span data-out="subtotal">&#8377;2,356</span></div>
+      <div class="row"><span>Delivery</span><span class="save">FREE</span></div>
+      <div class="row" data-fee data-amount="9" data-dp-label="drip_pricing" data-dp-id="chk-dp-1" data-dp-desc="Platform fee first shown at checkout"><span>Platform fee</span><span>&#8377;9</span></div>
+      <div class="row" data-fee data-amount="49" data-dp-label="drip_pricing" data-dp-id="chk-dp-2" data-dp-desc="Handling fee first shown at checkout"><span>Handling fee</span><span>&#8377;49</span></div>
+      <div class="row" data-fee data-amount="39" data-dp-label="drip_pricing" data-dp-id="chk-dp-3" data-dp-desc="Convenience fee first shown at checkout"><span>Convenience fee</span><span>&#8377;39</span></div>
+      <div class="row total"><span>Total payable</span><span data-out="total">&#8377;2,453</span></div>
+      <button class="btn btn-buy btn-block" data-dp-label="benign" data-dp-id="chk-bn-11">Place order</button>
+      <p class="muted" style="font-size:12px;margin-bottom:0">By placing the order you agree to Demo Mart's terms of use.</p>
+    </aside>
+  </div>
+</main>
+
+<!-- Forced action: account creation required, no guest checkout, no close control. Values are never read or stored. -->
+<div class="backdrop" role="dialog" aria-modal="true" aria-labelledby="su-title" data-forced="signup" hidden data-dp-label="forced_action" data-dp-id="chk-fa-1" data-dp-desc="Full-screen sign-up wall at checkout, no guest option, no close button">
+  <div class="modal">
+    <h2 id="su-title">Create an account to continue</h2>
+    <p class="muted">Guest checkout is not available. Sign up with your email and mobile number to place this order.</p>
+    <form>
+      <input type="email" placeholder="Email address" aria-label="Email address" required>
+      <input type="tel" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" aria-label="Mobile number" required>
+      <button class="btn btn-buy" type="submit">Sign up and continue</button>
+    </form>
+    <p class="fine-print" style="margin-top:10px">You also agree to download the Demo Mart app for order tracking.</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <div><a href="#">About</a><a href="#">Help centre</a><a href="#">Returns</a><a href="#">Privacy</a></div>
+    <div>&copy; 2026 Demo Mart (fictional brand)</div>
+  </div>
+  <div class="demo-note">Demo store for testing DarkLens. Not a real shop.</div>
+</footer>
+<script src="assets/common.js"></script>
+<script src="assets/dark.js"></script>
+</body>
+</html>

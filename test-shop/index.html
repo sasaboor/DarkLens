@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Mart | Lightning Deals on Audio, Home and Fashion</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- DarkLens test shop. Ground truth: data-dp-label / data-dp-id. Detection code must never read data-dp-*. -->
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo" href="index.html"><span class="logo-mark">D</span><span>Demo Mart<small>Explore more, pay less</small></span></a>
+    <div class="deliver">Deliver to<b>Pune 411001</b></div>
+    <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="header-links"><a href="#" class="hide-sm">Hello, Sign in</a><a href="#" class="hide-sm">Orders</a><a class="cart-link" href="cart.html">Cart<span class="cart-badge">2</span></a></nav>
+  </div>
+  <nav class="cat-nav"><ul><li><a href="index.html">Mobiles &amp; Audio</a></li><li><a href="index.html">Fashion</a></li><li><a href="index.html">Home &amp; Kitchen</a></li><li><a href="index.html">Grocery</a></li><li><a href="index.html">Beauty</a></li><li><a href="index.html">Diwali Store</a></li></ul></nav>
+</header>
+
+<main class="container">
+  <div class="deal-strip">
+    <div><strong>Lightning Deals</strong> <span class="muted" style="color:#fed7aa">Up to 70% off on top picks</span></div>
+    <div class="deal-ends" data-dp-label="false_urgency" data-dp-id="idx-fu-1" data-dp-desc="Lightning deal countdown that restarts on every reload">Ends in <span class="deal-timer" data-countdown="10799">02:59:59</span></div>
+  </div>
+
+  <div class="listing">
+    <aside class="filters panel">
+      <h3 style="margin-top:0">Filters</h3>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-1"> Free delivery</label>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-2"> 4&#9733; &amp; above</label>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-3"> Demo Mart Assured</label>
+      <h3>Price</h3>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-4"> Under &#8377;500</label>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-5"> &#8377;500 to &#8377;1,500</label>
+      <label><input type="checkbox" data-dp-label="benign" data-dp-id="idx-bn-6"> Above &#8377;1,500</label>
+    </aside>
+
+    <section>
+      <div class="toolbar">
+        <div class="muted">Showing 9 of 2,148 results for "deals"</div>
+        <label class="muted">Sort by
+          <select data-dp-label="benign" data-dp-id="idx-bn-7">
+            <option>Relevance</option><option>Price: low to high</option><option>Price: high to low</option><option>Newest first</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="grid">
+        <!-- Bait side of bait_and_switch (scored on product.html as prod-bas-1): listing says Rs 999, 50% off. -->
+        <article class="card">
+          <span class="badge-offer">50% OFF</span>
+          <a class="thumb" href="product.html"><img src="img/earbuds.svg" alt="Aarav Wireless Earbuds Pro"></a>
+          <a class="title" href="product.html">Aarav Wireless Earbuds Pro, 40h playback, ENC mic</a>
+          <div class="rating"><span class="stars">4.2 &#9733;</span> 12,431 ratings</div>
+          <div class="price-row"><span class="price">&#8377;999</span><span class="mrp">&#8377;1,999</span><span class="off">50% off</span></div>
+          <div class="free-del">Free delivery by Tue, 10 Nov</div>
+          <a class="btn btn-primary btn-sm" href="product.html">View deal</a>
+        </article>
+
+        <!-- Bait side of bait_and_switch (scored on cart.html as cart-bas-1): listing says Rs 199. -->
+        <article class="card">
+          <span class="badge-offer">DEAL</span>
+          <div class="thumb"><img src="img/bottle.svg" alt="Kaveri Steel Water Bottle"></div>
+          <a class="title" href="#">Kaveri Stainless Steel Water Bottle 1L, leak-proof</a>
+          <div class="rating"><span class="stars">4.4 &#9733;</span> 8,902 ratings</div>
+          <div class="price-row"><span class="price">&#8377;199</span><span class="mrp">&#8377;499</span><span class="off">60% off</span></div>
+          <div class="free-del">Free delivery</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-8">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/kurta.svg" alt="Ganga Cotton Kurta"></div>
+          <a class="title" href="#">Ganga Men's Cotton Kurta, saffron, regular fit</a>
+          <div class="rating"><span class="stars">4.1 &#9733;</span> 3,210 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-9">&#8377;649</span><span class="mrp">&#8377;899</span><span class="off">27% off</span></div>
+          <div class="free-del">Free delivery by Wed, 11 Nov</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-10">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/cooker.svg" alt="Rasoi Pressure Cooker"></div>
+          <a class="title" href="#">Rasoi Aluminium Pressure Cooker 5L, induction base</a>
+          <div class="rating"><span class="stars">4.3 &#9733;</span> 5,774 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-11">&#8377;1,849</span><span class="mrp">&#8377;2,450</span><span class="off">24% off</span></div>
+          <div class="stock-low" data-dp-label="false_urgency" data-dp-id="idx-fu-2" data-dp-desc="Static 'Only 3 left' stock message">Only 3 left, selling fast!</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-12">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/speaker.svg" alt="Lehar Bluetooth Speaker"></div>
+          <a class="title" href="#">Lehar Boom 20W Bluetooth Speaker, deep bass</a>
+          <div class="rating"><span class="stars">4.0 &#9733;</span> 2,019 ratings <span class="sponsored-tiny" data-dp-label="disguised_ads" data-dp-id="idx-da-1" data-dp-desc="9px light grey 'Sponsored' label inside the product grid">Sponsored</span></div>
+          <div class="price-row"><span class="price">&#8377;1,199</span><span class="mrp">&#8377;2,999</span><span class="off">60% off</span></div>
+          <div class="free-del">Free delivery</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart>Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/tea.svg" alt="Tulsi Green Tea"></div>
+          <a class="title" href="#">Tulsi Green Tea with Lemon, 100 tea bags</a>
+          <div class="rating"><span class="stars">4.5 &#9733;</span> 21,560 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-13">&#8377;299</span><span class="mrp">&#8377;350</span><span class="off">14% off</span></div>
+          <div class="free-del">Delivery &#8377;40, free above &#8377;499</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-14">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/powerbank.svg" alt="Shakti Power Bank"></div>
+          <a class="title" href="#">Shakti 20000mAh Power Bank, 22.5W fast charging</a>
+          <div class="rating"><span class="stars">4.2 &#9733;</span> 9,833 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-15">&#8377;1,099</span><span class="mrp">&#8377;1,799</span><span class="off">38% off</span></div>
+          <div class="free-del in-stock" data-dp-label="benign" data-dp-id="idx-bn-16">In stock</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-17">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/planter.svg" alt="Mitti Terracotta Planters"></div>
+          <a class="title" href="#">Mitti Terracotta Planter, set of 3, handmade</a>
+          <div class="rating"><span class="stars">4.3 &#9733;</span> 1,402 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-18">&#8377;549</span><span class="mrp">&#8377;699</span><span class="off">21% off</span></div>
+          <div class="free-del">Free delivery by Thu, 12 Nov</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-19">Add to cart</button>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="img/facewash.svg" alt="Veda Neem Face Wash"></div>
+          <a class="title" href="#">Veda Neem &amp; Tulsi Face Wash, 150 ml</a>
+          <div class="rating"><span class="stars">4.1 &#9733;</span> 6,118 ratings</div>
+          <div class="price-row"><span class="price" data-dp-label="benign" data-dp-id="idx-bn-20">&#8377;199</span><span class="mrp">&#8377;225</span><span class="off">11% off</span></div>
+          <div class="free-del">Delivery &#8377;40, free above &#8377;499</div>
+          <button class="btn btn-primary btn-sm" data-add-to-cart data-dp-label="benign" data-dp-id="idx-bn-21">Add to cart</button>
+        </article>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Nagging popup: shown on load and again after each dismissal, up to 3 times per session (dark.js). -->
+<div id="newsletter" class="backdrop" role="dialog" aria-modal="true" aria-labelledby="nl-title" hidden data-dp-label="nagging" data-dp-id="idx-nag-1" data-dp-desc="Newsletter popup that reappears up to 3 times per session">
+  <div class="modal">
+    <button class="close-x" aria-label="Close" data-dismiss>&times;</button>
+    <div class="modal-hero">&#8377;100 OFF</div>
+    <h2 id="nl-title">on your first order!</h2>
+    <p class="muted">Join 2 lakh shoppers who get early access to Lightning Deals.</p>
+    <form>
+      <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+      <button class="btn btn-buy" type="submit">Subscribe and get &#8377;100 off</button>
+    </form>
+    <button class="decline-shame" data-dismiss data-dp-label="confirm_shaming" data-dp-id="idx-cs-1" data-dp-desc="Decline wording shames the user">No thanks, I don't like saving money</button>
+  </div>
+</div>
+
+<div class="cookie-bar">
+  <span>We use cookies to personalise your offers and show you relevant ads. See our <a href="#" style="color:#fbbf24">Cookie Policy</a>.</span>
+  <button class="accept" data-banner-hide data-dp-label="benign" data-dp-id="idx-bn-22">Accept all</button>
+  <button class="decline" data-banner-hide data-dp-label="interface_interference" data-dp-id="idx-ii-1" data-dp-desc="11px grey Decline next to a large orange Accept">Decline</button>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <div><a href="#">About</a><a href="#">Help centre</a><a href="#">Returns</a><a href="#">Privacy</a></div>
+    <div>&copy; 2026 Demo Mart (fictional brand)</div>
+  </div>
+  <div class="demo-note">Demo store for testing DarkLens. Not a real shop.</div>
+</footer>
+<script src="assets/common.js"></script>
+<script src="assets/dark.js"></script>
+</body>
+</html>

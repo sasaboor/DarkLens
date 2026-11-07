@@ -30,4 +30,13 @@ describe('categories', () => {
       expect(c.description).not.toContain('\n');
     }
   });
+
+  it('gives every category a short badge name and a distinct colour', () => {
+    for (const c of CATEGORIES) {
+      expect(c.short.length).toBeGreaterThan(0);
+      expect(c.short.length).toBeLessThanOrEqual(12);
+      expect(c.color).toMatch(/^#[0-9a-f]{6}$/);
+    }
+    expect(new Set(CATEGORIES.map((c) => c.color)).size).toBe(CATEGORIES.length);
+  });
 });

@@ -42,12 +42,12 @@ Pixel refinement: the background worker captures the visible tab (chrome.tabs.ca
 ## Candidate elements
 Collect: button, a, [role=button], input[type=checkbox|radio|submit|button], [role=switch], [role=checkbox], select, dialog, [role=dialog], [aria-modal=true], fixed or sticky elements, and short text blocks (<= 300 chars) matching: prices (Rs, Rs. or the rupee sign followed by digits), timers (\d{1,2}:\d{2}(:\d{2})?), stock ("only N left", "N left in stock", "selling fast"), fees ("convenience fee", "platform fee", "handling fee", "delivery fee", "packaging fee"), sponsored or ad labels, subscription words ("auto-renew", "renews", "subscription", "membership").
 Skip invisible elements (display none, visibility hidden, zero size, fully off-screen, opacity 0). Walk open shadow roots. Cap at 300 candidates per page, prioritising interactive elements and those in dialogs, forms and checkout areas.
-Pairing: within the same dialog or form, or a nearest common ancestor with the two under 400px apart, pair an accept-like control (accept, continue, yes, add, buy, subscribe, allow, ok, get, claim) with a decline-like one (no, no thanks, skip, later, decline, cancel, not now, maybe later, I don't want).
+Pairing: within the same dialog or form, or a nearest common ancestor with the two under 400px apart, pair an accept-like control (accept, continue, yes, add, buy, subscribe, allow, ok, get, claim, upgrade) with a decline-like one (no, no thanks, skip, later, decline, cancel, not now, maybe later, I don't want, continue with standard/basic/free, continue without).
 
 ## Types (src/core/types.ts)
 type PageType = 'product' | 'cart' | 'checkout' | 'listing' | 'other'
 interface Candidate { id: string; text: string; tag: string; role: string | null; kind: 'control' | 'checkbox' | 'dialog' | 'banner' | 'price' | 'timer' | 'stock' | 'fee' | 'ad_label' | 'subscription' | 'text'; rect: {x: number; y: number; w: number; h: number}; counterpartId: string | null; features: number[] /* length 12 */; featureSource: {f03: 'css' | 'pixels'; f04: 'css' | 'pixels'}; context: {pageType: PageType; inDialog: boolean; nearbyPrice: string | null} }
-interface Finding { candidateId: string; category: number; confidence: number; source: 'rule' | 'model' | 'both'; reason: string; evidence: string[]; confirmed?: boolean }
+interface Finding { candidateId: string; category: number; confidence: number; source: 'rule' | 'model' | 'both'; reason: string; evidence: string[]; confirmed?: boolean; hard?: boolean /* fired on hard evidence */ }
 
 ## Rules (starting thresholds; tune only on the test shop and practice sites, never on the held-out evaluation sites)
 - interface_interference: the decline side has accept/decline area_ratio > 2.5, or font_ratio > 1.5, or decline contrast < 3 while accept >= 4.5, or decline_as_link = 1.
@@ -55,11 +55,12 @@ interface Finding { candidateId: string; category: number; confidence: number; s
 - false_urgency: countdown = 1, or a stock or high-demand message. confirmed = true when the timer's computed end time moves later after a reload (stored per URL), or the stock number is unchanged across visits on different days.
 - drip_pricing: price_delta > 0.02 and at least one fee line not shown on the product page.
 - forced_action: a dialog with overlay_coverage > 0.6, unclosable_modal = 1, and login, sign-up, phone, email or app-download wording.
-- nagging: 3 or more distinct dialogs or overlays on the same site in one browser session.
+- nagging: 3 or more distinct dialogs or overlays on the same site in one browser session. Cookie consent banners do not count.
 - subscription_trap: an auto-renew or subscription option with default_checked = 1, or renewal terms with faded = 1 near a subscribe or buy button.
 - disguised_ads: a sponsored or ad label with font < 10px or contrast < 3, inside a product grid or among reviews.
 - bait_and_switch: the offer or price on a listing card differs from the product page (stored per product in the session).
 - confirm_shaming and trick_wording: mainly the text model. The rule engine keeps a small phrase list as a fallback.
+- One finding per element: when several rules fire on the same element, hard evidence wins, then the higher confidence; the others are noted in the evidence. All thresholds live in RULES_CONFIG (src/core/rules.ts).
 - Combining: if a rule fires with hard evidence (default_checked, price_delta, a confirmed timer reset, an unclosable modal), use the rule's category even if the model disagrees; source = 'both' when they agree. Otherwise use the model's category when confidence >= 0.6.
 
 ## Risk score
@@ -93,5 +94,16 @@ WXT + React + TypeScript (strict), Vitest; Playwright (Node + TypeScript) for ba
 - Side panel: one card per finding: category, CCPA description, reason, evidence, confidence, source, element text; clicking scrolls to the element and flashes it.
 - Options: enable or disable categories, sensitivity (confidence threshold), auto-scan or manual, clear stored data, labelling mode toggle, About (scope and privacy).
 
+
+## Progress reporting (after every task)
+When you finish any task, update PROGRESS.md and end your reply with these four headings, in plain words:
+1. Done: what you built or changed in this task (features and main files).
+2. What it does now: what DarkLens can do at this point from a user's view, and how to try it.
+3. Checks: results of npm test, npm run build and npm run evaluate (when it exists), with numbers.
+4. Left: what remains of Prompts 0 to 11, plus known issues and any shortcuts you took.
+PROGRESS.md has a "Current state" summary at the top (what works, what doesn't, next prompt), then one section per prompt with the date, what was done, test results and known issues. Keep it accurate; never claim something works unless you ran it.
+
+Then create PROGRESS.md now. Read the code and git log to work out which prompts are already done, run npm test and npm run build, and fill it in honestly. Finish with the four-heading report.
+
 ## Commands
-npm run dev, npm run build, npm test, npm run build:extractor, npm run evaluate
+npm run dev, npm run build, npm test, npm run build:extractor, npm run evaluate, npm run walk (test shop walk-through with findings per page), npm run e2e:debug (built extension end to end)

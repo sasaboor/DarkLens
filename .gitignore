@@ -23,3 +23,10 @@ __pycache__/
 .vscode/*
 !.vscode/extensions.json
 .idea/
+
+# Tool bundles (npm run build:extractor)
+dist-tools/
+
+# Batch tool output (npm run collect, npm run evaluate); eval-latest.md stays trackable for the report
+data/collected/
+results/eval-*.json

@@ -1,0 +1,8 @@
+# Test shop pages for npm run collect (the shop starts automatically on port 5050).
+http://localhost:5050/index.html
+http://localhost:5050/product.html
+http://localhost:5050/cart.html
+http://localhost:5050/checkout.html
+http://localhost:5050/clean/product.html
+http://localhost:5050/clean/cart.html
+http://localhost:5050/clean/checkout.html

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | Demo Mart</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<!-- DarkLens test shop, CLEAN variant: no dark patterns. Every labelled element is benign (false-positive testing). -->
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo" href="../index.html"><span class="logo-mark">D</span><span>Demo Mart<small>Explore more, pay less</small></span></a>
+    <div class="deliver">Deliver to<b>Pune 411001</b></div>
+    <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="header-links"><a href="#" class="hide-sm">Hello, Sign in</a><a href="#" class="hide-sm">Orders</a><a class="cart-link" href="cart.html">Cart<span class="cart-badge">1</span></a></nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Checkout</h1>
+  <p class="muted" style="margin-top:0">Guest checkout. You can create an account after placing your order if you like.</p>
+
+  <div class="two-col">
+    <section>
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">1</span><h2 style="margin:0">Delivery address</h2></div>
+        <div class="form-grid">
+          <div class="field"><label for="a-name">Full name</label><input id="a-name" autocomplete="name"></div>
+          <div class="field"><label for="a-phone">Mobile number</label><input id="a-phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="a-pin">Pincode</label><input id="a-pin" inputmode="numeric" autocomplete="postal-code"></div>
+          <div class="field"><label for="a-city">City</label><input id="a-city" autocomplete="address-level2"></div>
+        </div>
+        <div class="field"><label for="a-line">Flat, house no., building, area</label><input id="a-line" autocomplete="street-address"></div>
+        <div class="field"><label for="a-state">State</label>
+          <select id="a-state" aria-label="State" data-dp-label="benign" data-dp-id="cchk-bn-1"><option>Maharashtra</option><option>Karnataka</option><option>Tamil Nadu</option><option>Delhi</option><option>West Bengal</option><option>Rajasthan</option></select>
+        </div>
+        <label style="font-size:13px"><input type="checkbox" data-dp-label="benign" data-dp-id="cchk-bn-2"> Save this address for future orders</label>
+      </div>
+
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">2</span><h2 style="margin:0">Delivery options</h2></div>
+        <label class="radio-card"><input type="radio" name="speed" checked data-dp-label="benign" data-dp-id="cchk-bn-3"> <span><b>Standard delivery</b>, &#8377;40 &middot; by Tue, 10 Nov</span></label>
+        <label class="radio-card"><input type="radio" name="speed" data-dp-label="benign" data-dp-id="cchk-bn-4"> <span><b>Express delivery</b>, &#8377;99 &middot; tomorrow</span></label>
+
+        <h3 style="margin-top:16px">Is this order a gift?</h3>
+        <div class="choice-row">
+          <label class="radio-card"><input type="radio" name="gift" data-dp-label="benign" data-dp-id="cchk-bn-5"> Yes</label>
+          <label class="radio-card"><input type="radio" name="gift" data-dp-label="benign" data-dp-id="cchk-bn-6"> No</label>
+        </div>
+
+        <label class="addon">
+          <input type="checkbox" data-amount="10" data-dp-label="benign" data-dp-id="cchk-bn-7" data-dp-desc="Optional donation, unticked">
+          <span><b>Donate Rs 10</b> to the Demo Mart Foundation for children's education (optional)</span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" data-dp-label="benign" data-dp-id="cchk-bn-8" data-dp-desc="Plainly worded, unticked email opt-in">
+          <span style="font-size:13px">Email me offers and new arrivals.</span>
+        </label>
+      </div>
+
+      <div class="panel step">
+        <div class="step-title"><span class="step-num">3</span><h2 style="margin:0">Payment</h2></div>
+        <label class="radio-card"><input type="radio" name="pay" checked data-dp-label="benign" data-dp-id="cchk-bn-9"> UPI (any UPI app)</label>
+        <label class="radio-card"><input type="radio" name="pay" data-dp-label="benign" data-dp-id="cchk-bn-10"> Credit or debit card</label>
+        <label class="radio-card"><input type="radio" name="pay" data-dp-label="benign" data-dp-id="cchk-bn-11"> Cash on delivery</label>
+      </div>
+    </section>
+
+    <aside class="panel summary">
+      <h2>Order summary</h2>
+      <div class="row" data-line data-amount="1299"><span>Aarav Wireless Earbuds Pro &times; 1</span><span>&#8377;1,299</span></div>
+      <div class="row"><span>Subtotal</span><span data-out="subtotal">&#8377;1,299</span></div>
+      <div class="row" data-fee data-amount="40" data-dp-label="benign" data-dp-id="cchk-bn-12" data-dp-desc="Delivery fee already shown on the product page"><span>Delivery fee</span><span>&#8377;40</span></div>
+      <div class="row total"><span>Total payable</span><span data-out="total">&#8377;1,339</span></div>
+      <button class="btn btn-buy btn-block" data-dp-label="benign" data-dp-id="cchk-bn-13">Place order</button>
+      <p class="muted" style="font-size:12px;margin-bottom:0">By placing the order you agree to Demo Mart's terms of use.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <div><a href="#">About</a><a href="#">Help centre</a><a href="#">Returns</a><a href="#">Privacy</a></div>
+    <div>&copy; 2026 Demo Mart (fictional brand)</div>
+  </div>
+  <div class="demo-note">Demo store for testing DarkLens. Not a real shop.</div>
+</footer>
+<script src="../assets/common.js"></script>
+</body>
+</html>

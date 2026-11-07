@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart | Demo Mart</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<!-- DarkLens test shop, CLEAN variant: no dark patterns. Every labelled element is benign (false-positive testing). -->
+<header class="site-header">
+  <div class="header-row">
+    <a class="logo" href="../index.html"><span class="logo-mark">D</span><span>Demo Mart<small>Explore more, pay less</small></span></a>
+    <div class="deliver">Deliver to<b>Pune 411001</b></div>
+    <form class="search" role="search" onsubmit="return false"><input type="search" placeholder="Search for products, brands and more" aria-label="Search"><button type="submit">Search</button></form>
+    <nav class="header-links"><a href="#" class="hide-sm">Hello, Sign in</a><a href="#" class="hide-sm">Orders</a><a class="cart-link" href="cart.html">Cart<span class="cart-badge">1</span></a></nav>
+  </div>
+  <nav class="cat-nav"><ul><li><a href="../index.html">Mobiles &amp; Audio</a></li><li><a href="../index.html">Fashion</a></li><li><a href="../index.html">Home &amp; Kitchen</a></li><li><a href="../index.html">Grocery</a></li><li><a href="../index.html">Beauty</a></li><li><a href="../index.html">Diwali Store</a></li></ul></nav>
+</header>
+
+<main class="container">
+  <h1>Shopping cart</h1>
+
+  <div class="two-col">
+    <section>
+      <div class="panel">
+        <article class="cart-item" data-line data-amount="1299">
+          <div class="thumb"><img src="../img/earbuds.svg" alt=""></div>
+          <div>
+            <a class="title" href="product.html"><b>Aarav Wireless Earbuds Pro</b></a>
+            <div class="muted" style="font-size:12px">Colour: Midnight Black &middot; Sold by Aarav Audio</div>
+            <div class="in-stock" style="font-size:12px" data-dp-label="benign" data-dp-id="ccart-bn-1">In stock</div>
+            <div class="actions">
+              <label>Qty <select data-qty aria-label="Quantity" data-dp-label="benign" data-dp-id="ccart-bn-2"><option>1</option><option>2</option><option>3</option></select></label>
+              <button class="link-btn" data-dp-label="benign" data-dp-id="ccart-bn-3">Save for later</button>
+              <button class="link-btn" data-remove data-dp-label="benign" data-dp-id="ccart-bn-4">Remove</button>
+            </div>
+          </div>
+          <div class="line-price" data-out="line" data-dp-label="benign" data-dp-id="ccart-bn-5">&#8377;1,299</div>
+        </article>
+
+        <label class="addon">
+          <input type="checkbox" data-amount="499" data-dp-label="benign" data-dp-id="ccart-bn-6" data-dp-desc="Optional protection plan, unticked">
+          <span><b>Add 1-year protection plan Rs 499</b><br><span class="muted" style="font-size:12px">Optional. Covers accidental damage and liquid spills for your earbuds.</span></span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" data-amount="30" data-dp-label="benign" data-dp-id="ccart-bn-7">
+          <span><b>Gift wrap this order, Rs 30</b><br><span class="muted" style="font-size:12px">Optional. Includes a printed message card.</span></span>
+        </label>
+        <label class="addon">
+          <input type="checkbox" data-dp-label="benign" data-dp-id="ccart-bn-8" data-dp-desc="Plainly worded, unticked SMS opt-in">
+          <span style="font-size:13px">Send me order updates by SMS.</span>
+        </label>
+
+        <div class="coupon-box">
+          <span><b>SAVE10</b> gives you 10% off on this order.</span>
+          <button class="btn btn-outline btn-sm" data-dp-label="benign" data-dp-id="ccart-bn-9">Apply coupon</button>
+          <button class="btn btn-outline btn-sm" data-dp-label="benign" data-dp-id="ccart-bn-10">No thanks</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel summary">
+      <h2>Price details</h2>
+      <div class="row"><span>Subtotal</span><span data-out="subtotal">&#8377;1,299</span></div>
+      <div class="row" data-fee data-amount="40" data-dp-label="benign" data-dp-id="ccart-bn-11" data-dp-desc="Delivery fee already shown on the product page"><span>Delivery fee</span><span>&#8377;40</span></div>
+      <div class="row total"><span>Total</span><span data-out="total">&#8377;1,339</span></div>
+      <a class="btn btn-buy btn-block" href="checkout.html" data-dp-label="benign" data-dp-id="ccart-bn-12">Proceed to checkout</a>
+      <p class="muted" style="font-size:12px;margin-bottom:0">Safe and secure payments. Easy 7-day returns.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-row">
+    <div><a href="#">About</a><a href="#">Help centre</a><a href="#">Returns</a><a href="#">Privacy</a></div>
+    <div>&copy; 2026 Demo Mart (fictional brand)</div>
+  </div>
+  <div class="demo-note">Demo store for testing DarkLens. Not a real shop.</div>
+</footer>
+<script src="../assets/common.js"></script>
+</body>
+</html>
