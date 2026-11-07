@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# WXT build output and generated types
+.output/
+.wxt/
+dist/
+*.zip
+
+# Test and tooling output
+coverage/
+test-results/
+playwright-report/
+
+# Python / notebooks
+__pycache__/
+.ipynb_checkpoints/
+
+# OS, editors, logs, secrets
+.DS_Store
+*.log
+.env*
+.vscode/*
+!.vscode/extensions.json
+.idea/
